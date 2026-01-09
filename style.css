@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #1e1e1e;
+  font-family: sans-serif;
+}
+
+#glcanvas {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+}
+
+#toolbar {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+}
+
+#toolbar button {
+  padding: 8px 12px;
+  background: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+#toolbar button.active {
+  background: #007acc;
+}
