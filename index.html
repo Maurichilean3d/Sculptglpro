@@ -1,19 +1,37 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html lang='es'>
 <head>
-  <meta charset="UTF-8" />
-  <title>SculptGL – Local / Global Transform</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset='utf-8'>
+  <title>SculptGL Pro</title>
+  <meta name='viewport' content='width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0'>
+  <style>
+    body { font-family: sans-serif; margin: 0; overflow: hidden; background: #333; }
+  </style>
+  <link rel='stylesheet' href='./css/style.css'>
 </head>
 <body>
+  <input type="file" id="fileopen" style="display: none"/>
+  <input type="file" id="backgroundopen" style="display: none"/>
+  <input type="file" id="alphaopen" style="display: none"/>
+  <input type="file" id="textureopen" style="display: none"/>
+  <input type="file" id="matcapopen" style="display: none"/>
 
-<div id="toolbar">
-  <button id="modeBtn">GLOBAL</button>
-</div>
-
-<canvas id="glcanvas"></canvas>
-
-<script type="module" src="src/main.js"></script>
+  <script src='./lib/jquery-3.3.1.min.js'></script>
+  <script src='./lib/hammer.min.js'></script>
+  <script src='./lib/lzma.js'></script>
+  
+  <script type='module'>
+    // Aquí es donde unimos los códigos sueltos
+    import SculptGL from './src/SculptGL.js';
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      // Iniciamos la aplicación
+      var app = new SculptGL();
+      app.start();
+      
+      // Ajuste para móviles/tablets
+      document.body.addEventListener('touchmove', function(e) { e.preventDefault(); }, { passive: false });
+    });
+  </script>
 </body>
 </html>
-
