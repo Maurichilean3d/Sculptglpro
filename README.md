@@ -1,18 +1,37 @@
-# SculptGL – Local / Global Transform (HTML5)
+Status
+======
 
-Proyecto base para extender SculptGL con:
-- Transformaciones Globales
-- Transformaciones Locales
-- Gizmo orientado al objeto
+I don't maintain Sculptgl anymore (except small/minor fixes).
 
-## Uso
-1. Subir el repo a GitHub
-2. Activar GitHub Pages
-3. Abrir index.html
+SculptGL - WebGL sculpting
+==========================
 
-## Controles
-- Botón GLOBAL / LOCAL
-- Cambia orientación matemática y visual
+You can try it [**here**](http://stephaneginier.com/sculptgl).
 
-## Extensión
-Este proyecto está diseñado para integrarse directamente en SculptGL.
+Additional information can be found on the [website](http://stephaneginier.com/).
+
+Tools
+=====
+
+Nodejs needs to be installed [nodejs](http://nodejs.org/).
+
+Then for the browser build :
+```
+yarn # npm install
+yarn dev # npm run dev (npm run release for final build, npm run website should not be used)
+// visit app/index.html
+```
+
+For standalone :
+```
+yarn add electron
+yarn add electron-packager
+yarn standalone
+```
+
+Credits
+=======
+
+#### Environments
+
+The raw environments are from https://hdrihaven.com/hdris
