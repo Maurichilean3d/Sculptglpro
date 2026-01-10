@@ -1,37 +1,31 @@
-<!doctype html>
-<html lang='es'>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset='utf-8'>
-  <title>SculptGL Pro</title>
-  <meta name='viewport' content='width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0'>
-  <style>
-    body { font-family: sans-serif; margin: 0; overflow: hidden; background: #333; }
-  </style>
-  <link rel='stylesheet' href='./css/style.css'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>SculptGL Pro</title>
+    <style>
+        body { margin: 0; overflow: hidden; background-color: #333; }
+        canvas { width: 100%; height: 100%; display: block; }
+    </style>
 </head>
 <body>
-  <input type="file" id="fileopen" style="display: none"/>
-  <input type="file" id="backgroundopen" style="display: none"/>
-  <input type="file" id="alphaopen" style="display: none"/>
-  <input type="file" id="textureopen" style="display: none"/>
-  <input type="file" id="matcapopen" style="display: none"/>
+    <script src="./lib/three.min.js"></script> 
+    <script src="./lib/jquery.min.js"></script>
 
-  <script src='./lib/jquery-3.3.1.min.js'></script>
-  <script src='./lib/hammer.min.js'></script>
-  <script src='./lib/lzma.js'></script>
-  
-  <script type='module'>
-    // Aquí es donde unimos los códigos sueltos
-    import SculptGL from './src/SculptGL.js';
-    
-    document.addEventListener('DOMContentLoaded', function() {
-      // Iniciamos la aplicación
-      var app = new SculptGL();
-      app.start();
-      
-      // Ajuste para móviles/tablets
-      document.body.addEventListener('touchmove', function(e) { e.preventDefault(); }, { passive: false });
-    });
-  </script>
+    <script src="./sculptgl.js"></script>
+
+    <script>
+        window.addEventListener('load', function() {
+            // Esta línea depende de cómo esté programado el motor original
+            // A veces es 'new SculptGL()' o 'app.start()'
+            if (typeof SculptGL !== 'undefined') {
+                var app = new SculptGL();
+                app.start();
+            } else {
+                console.error("No se encontró el motor SculptGL. Revisa las rutas de los archivos .js");
+            }
+        });
+    </script>
 </body>
 </html>
